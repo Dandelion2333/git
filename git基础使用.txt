@@ -1,0 +1,47 @@
+1、git提交代码流程
+	1、feature分支合并到dev分支
+	2、在主目录下切换到develop-mini_s 分支
+		git pull 	(先拉去最近的代码)
+		git add data/session/
+		git commit  (然后自动跳转到输入备注环节)
+		git push	(提交代码)
+		
+2、基础指令
+	查看远程仓库名称
+		git remote -v
+	查看用户名与密码
+
+3、远端分支相关
+	1、把本地分支与GitHub建立联系
+		git add xxx
+		git commit -m "xxx"
+		git branch -M dev  					// 把当前分支命名为dev
+		git remote add origin github网址	// 添加远端地址
+		git push -u origin dev 				// push到远端的dev分支
+
+	
+问题处理：
+	1、拉取远程仓库问题
+		问题描述：
+			git clone时 fatal: 无法读取远程仓库。
+		问题原因：
+			由于git已经绑定了GitHub的用户名与密码，所以拉取gitee或者gitlab的仓库时，会出错
+		解决办法：
+			使用HTTP的形式拉取。
+			进入到gitlab找到相应的仓库。例如
+		
+	2、每次push或者pull都需要输入用户名与密码的问题
+		问题原因：
+			本地并没有记录用户名与密码，HTTP方式才会有。ssh方式好像不会
+		解决办法：
+			输入指令：git config --global credential.helper store。创建一个文件用于记录
+			然后git pull一下，此时提示输入用户名与密码。本次输入会自动保存。
+			所以，以后就不需要输入了。
+	
+	3、问题描述：git push error:failed to push some refs to
+		1、问题原因：GitHub的readme.md文件不在本地
+		2、所以要先把远程分支的内容拉下来， git pull --rebase origin feature_docker（本地分支名称）
+		3、然后push。git push -u origin feature_docker（本地分支名称）
+	
+	4、切换到远程分支
+		git checkout -b dev origin/dev
