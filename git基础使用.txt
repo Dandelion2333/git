@@ -18,6 +18,8 @@
 		git branch -M dev  					// 把当前分支命名为dev
 		git remote add origin github网址	// 添加远端地址
 		git push -u origin dev 				// push到远端的dev分支
+	2、删除远程分支
+		git push origin --delete 分支名称
 
 	
 问题处理：
