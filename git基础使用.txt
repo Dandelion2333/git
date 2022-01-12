@@ -20,6 +20,16 @@
 		git push -u origin dev 				// push到远端的dev分支
 	2、删除远程分支
 		git push origin --delete 分支名称
+		
+4、在目录下提交子目录代码
+	cd 到主仓库
+	git branch 					确认与子仓库为同一个分支
+	git add data/session  		添加子仓库
+	git commit -m "描述信息"
+	git push 
+	
+	特别注意点：
+		push的时候一定要确认session分支与主目录分支为同一个分支。
 
 	
 问题处理：
