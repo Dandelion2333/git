@@ -30,6 +30,15 @@
 	
 	特别注意点：
 		push的时候一定要确认session分支与主目录分支为同一个分支。
+		
+5、拉取远程仓库代码
+	直接拉取：git clone 网址
+	拉取之后改名字：git clone 网址 新名字		例子：git clone http://github.dandelion.com/demo/sample.git MySampleDir
+	
+6、主工程与子仓库
+	把子仓库保持与主工程相同的分支（例如主工程是dev-5.3.26.100分支，把所有子仓库的分支都切换到指向主工程的dev-5.3.26.100分支）
+		git submodule init
+		git submodule update
 
 	
 问题处理：
@@ -57,3 +66,4 @@
 	
 	4、切换到远程分支
 		git checkout -b dev origin/dev
+		
